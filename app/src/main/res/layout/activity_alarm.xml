@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="#BDBFBA"
+    android:layout_height="match_parent">
+
+    <!-- Toolbar를 포함한 첫 번째 세로 LinearLayout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#BDBFBA"
+            app:titleTextColor="@android:color/black"
+            app:contentInsetStart="0dp"
+            app:contentInsetEnd="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- 왼쪽 버튼 -->
+                <Button
+                    android:id="@+id/backBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start"
+                    android:background="@android:color/transparent"
+                    android:layout_marginStart="10dp" />
+
+                <!-- 가운데 제목 -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="알림 설정"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_weight="1" />
+
+                <!-- 오른쪽 버튼 -->
+                <Button
+                    android:id="@+id/homeBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:background="@android:color/transparent"
+                    android:drawableRight="@drawable/home"
+                    android:layout_marginEnd="10dp" />
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <!-- 구분선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000000" />
+    </LinearLayout>
+
+    <!-- 알림 설정 부분 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- 알림 허용 라벨 -->
+            <TextView
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="알림 허용"
+                android:textSize="20sp"
+                android:textColor="@android:color/black" />
+
+            <!-- 스위치 버튼 -->
+            <Switch
+                android:id="@+id/mySwitch"
+                android:checked="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:thumbTint="@color/black"
+                android:trackTint="@color/black"
+                android:layout_marginRight="30dp"/>
+        </LinearLayout>
+
+        <!-- 시간 설정 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="20dp">
+
+            <!-- 시간 텍스트 -->
+            <TextView
+                android:id="@+id/timeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="알림 시간"
+                android:textSize="20sp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/black" />
+
+            <!-- 시간 선택 버튼 -->
+            <Button
+                android:id="@+id/timePickerBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="시간 선택"
+                android:textSize="18sp"
+                android:layout_marginRight="30dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
